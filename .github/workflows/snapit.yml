@@ -10,14 +10,14 @@ jobs:
     name: Snapit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
         with:
           token: ${{ secrets.SHOPIFY_GH_ACCESS_TOKEN }}
 
       - uses: ./.github/workflows/actions/prepare
 
       - name: Create snapshot
-        uses: Shopify/snapit@main
+        uses: Shopify/snapit@efd7ad2bbc01ba82ac9a8495eb49b3a8eed0d9b9 # main
         env:
           GITHUB_TOKEN: ${{ secrets.SHOPIFY_GH_ACCESS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

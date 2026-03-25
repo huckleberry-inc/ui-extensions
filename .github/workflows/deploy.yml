@@ -18,7 +18,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
         with:
           token: ${{ secrets.SHOPIFY_GH_ACCESS_TOKEN }}
 
@@ -26,7 +26,7 @@ jobs:
 
       - id: changesets
         name: Create release Pull Request or publish to NPM
-        uses: changesets/action@v1
+        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1
         with:
           title: Version Packages (${{ github.ref_name }})
           publish: yarn run deploy --tag ${{ github.ref_name }}
